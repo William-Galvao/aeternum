@@ -33,7 +33,7 @@ function scrollToDiv(id) {
                     is to preserve personal legacies and connect generations of families.
                 </p>
 
-                <p class="text-2xl">
+                <p class="text-xl">
                     We believe in the power of storytelling, and the importance of preserving the wisdom and experiences of
                     the past. We strive to capture personal legacies, keeping them alive and tangible for future
                     generations. Utilizing advanced technology, we build bridges between generations, fostering a deeper
