@@ -43,14 +43,14 @@ const navOptions = [
                 </li>
             </template>
         </ul>
-        <fa @click="mobileMenuActive = !mobileMenuActive" class="block lg:hidden border rounded p-2 text-white text-2xl"
-            icon="bars" />
+        <fa @click="mobileMenuActive = !mobileMenuActive" class="block lg:hidden border rounded h-12 w-12 text-white p-1"
+            :icon="mobileMenuActive? 'x' : 'bars'" />
 
     </header>
-    <Transition enter-active-class="animate__animated animate__fadeInLeft"
-        leave-active-class="animate__animated animate__fadeOutLeft">
+    <Transition enter-active-class="animate__animated animate__fadeInDown"
+        leave-active-class="animate__animated animate__fadeOutUp">
         <ul v-if="mobileMenuActive"
-            class="bg-black fixed top-24 w-full z-50 lg:hidden flex flex-col gap-y-2 items-start opacity-90">
+            class="bg-black fixed top-0 pt-24 w-full h-screen z-40 lg:hidden flex flex-col gap-y-2 items-start">
             <template v-for="option in navOptions">
                 <li @click="() => {$emit('selectedMenu', option.ELEMENT); mobileMenuActive = false}"
                     class="cursor-pointer text-white text-xl transition duration-300 hover:scale-105 p-4 border-b border-white w-full">

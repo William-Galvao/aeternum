@@ -15,7 +15,7 @@ function scrollToDiv(id) {
                     Bridging Generations Through Legacy
                 </p>
                 <button @click="scrollToDiv('learnmore')"
-                    class="self-start h-14 px-4 bg-gradient-to-r from-[#069f60] to-[#058dd8] text-white text-xl lg:text-3xl rounded transition duration-300 hover:scale-105 shadow-lg">
+                    class="self-start h-14 px-4 bg-gradient-to-r from-[#069f60] to-[#058dd8] text-white text-xl lg:text-2xl rounded transition duration-300 hover:scale-105 shadow-lg">
                     Learn More
                 </button>
             </div>
