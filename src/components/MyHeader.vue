@@ -43,7 +43,7 @@ const navOptions = [
                 </li>
             </template>
         </ul>
-        <fa @click="mobileMenuActive = !mobileMenuActive" class="block lg:hidden border rounded h-12 w-12 text-white p-1"
+        <fa @click="mobileMenuActive = !mobileMenuActive" class="block lg:hidden text-xl text-white p-1"
             :icon="mobileMenuActive? 'x' : 'bars'" />
 
     </header>
