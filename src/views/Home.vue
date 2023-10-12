@@ -1,13 +1,22 @@
 <script setup>
-import HelloWorld from '../components/HelloWorld.vue';
+import { ref } from 'vue'
+import MyHeader from '../components/MyHeader.vue';
+import MyFooter from '../components/MyFooter.vue';
+import HomeContent from '../components/HomeContent.vue';
+import UnderConstruction from '../components/UnderConstruction.vue';
 
+const contentActive = ref('Home')
 
 </script>
 
+
+
 <template>
+    <MyHeader @selectedMenu="(element) => contentActive = element"/>
+        
+    <HomeContent v-if="contentActive === 'Home'" />
 
-    <HelloWorld message="Vite | Vue (Vue Router) |
-        Tailwind | Font
-        Awesome | Animate.css" />
+    <UnderConstruction v-else/>
 
+    <MyFooter />
 </template>
