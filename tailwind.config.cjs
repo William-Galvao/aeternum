@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        comfortaa: ['Comfortaa', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }

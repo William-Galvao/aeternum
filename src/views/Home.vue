@@ -7,16 +7,21 @@ import UnderConstruction from '../components/UnderConstruction.vue';
 
 const contentActive = ref('Home')
 
+function scrollToDiv(id) {
+    const div = document.getElementById(id);
+    div.scrollIntoView({ behavior: "smooth" });
+}
+
 </script>
 
 
 
 <template>
-    <MyHeader @selectedMenu="(element) => contentActive = element"/>
-        
+    <MyHeader @selectedMenu="(element) => scrollToDiv(element)" />
+
     <HomeContent v-if="contentActive === 'Home'" />
 
-    <UnderConstruction v-else/>
+    <UnderConstruction v-else />
 
     <MyFooter />
 </template>
