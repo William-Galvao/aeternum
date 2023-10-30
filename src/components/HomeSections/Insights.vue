@@ -1,4 +1,6 @@
 <script setup>
+
+
 </script>
 
 <template>
@@ -22,9 +24,9 @@
                 ensures they are never lost, fostering a continuity of knowledge and wisdom that transcends time.
             </p>
 
-            <div class="w-full flex lg:flex-row flex-col-reverse items-center">
+            <div class="w-full flex lg:flex-row flex-col-reverse items-center" >
 
-                <div class="lg:w-1/3 flex justify-center items-center flex-col">
+                <div class="lg:w-1/3 flex justify-center items-center flex-col" >
                     <h1 class="text-4xl text-[#a6b5fe] font-comfortaa">
                         Aela</h1>
                     <h2 class="text-2xl text-center">The Heart of <span
@@ -33,7 +35,7 @@
                         </span></h2>
                 </div>
                 <div class="lg:w-2/3">
-                    <img src="../../assets/AI_perfil.jpg" />
+                    <img src="../../assets/AI_perfil.jpg"/>
                 </div>
             </div>
 

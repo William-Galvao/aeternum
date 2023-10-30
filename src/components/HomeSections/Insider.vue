@@ -3,19 +3,41 @@
 import { ref } from 'vue'
 import { doc, setDoc } from "firebase/firestore";
 import { db } from '@/firebase';
+import {useToast} from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
+const $toast = useToast();
 
 const userEmail = ref('')
 const alreadySubscribed = ref(localStorage.getItem("aeternumBeta"))
 const loading = ref(false)
 
+
+function validateInfos() {
+
+if(!userEmail.value) return { status: false, message: "Please enter your email." }
+
+const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+if (!emailRegex.test(userEmail.value)) return { status: false, message: "The provided email does not exist." }
+
+return { status: true }
+}
+
+
 async function subscribeBeta() {
     loading.value = true
+
+    if (!validateInfos().status) {
+        loading.value = false
+        $toast.error(validateInfos().message)
+        return
+    }
 
     await setDoc(doc(db, "SUBS", userEmail.value), {
         EMAIL: userEmail.value
     }).then(() => {
         loading.value = false
-        localStorage.setItem("aeternumBeta", 1)
+        localStorage.setItem("aeternumBeta", userEmail.value)
         alreadySubscribed.value = localStorage.getItem("aeternumBeta")
     }).catch((error) => {
         loading.value = false
@@ -69,7 +91,7 @@ async function subscribeBeta() {
                                 class="text-transparent text-center bg-gradient-to-r from-[#069f60] to-[#058dd8] bg-clip-text font-comfortaa">
                                 Aeternum
                             </span>'s beta program.</p>
-                        <p class="text-xl">Please expect to receive an email notification when everything is set to go.</p>
+                        <p class="text-xl">Please expect to receive an email notification at <span class="font-bold">{{alreadySubscribed}}</span> when everything is set to go.</p>
                     </div>
                 </div>
             </div>
